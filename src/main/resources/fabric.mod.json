@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "gentest",
+  "version": "${version}",
+  "name": "GenTest Mod",
+  "description": "ttt",
+  "authors": [
+    "Roaringmind22"
+  ],
+  "contributors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/gentest/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.roaringmind.gentest.GenTestMod"
+    ],
+    "client": [],
+    "server": []
+  },
+  "mixins": [
+    "gentest.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.1",
+    "fabric": "*"
+  }
+}
