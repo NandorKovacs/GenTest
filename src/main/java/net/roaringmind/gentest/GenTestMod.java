@@ -37,7 +37,7 @@ public class GenTestMod implements ModInitializer {
             }));
         });
         Registry.register(Registry.BLOCK, new Identifier("gentest", "sajt"), SAJT);
-        Registry.register(Registry.ITEM, new Identifier("gentest", "sajt"), new BlockItem(SAJT, new Item.Settings().group(ItemGroup.MISC)));
+        Registry.register(Registry.ITEM, new Identifier("gentest", "sajt"), new BlockItem(SAJT, new Item.Settings().group(ItemGroup.FOOD)));
     }
 
     public static void log(Level level, String message) {
