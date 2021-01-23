@@ -2,7 +2,10 @@ package net.roaringmind.gentest;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.Block;
+import net.minecraft.block.Material;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
@@ -20,18 +23,20 @@ public class GenTestMod implements ModInitializer {
     public static final String MOD_ID = "gentest";
     public static final String MOD_NAME = "GenTest Mod";
 
-    public static final Item SAJT = new Item(new FabricItemSettings().group(ItemGroup.MISC));
+    public static final Block SAJT = new Block(FabricBlockSettings.of(Material.ORGANIC_PRODUCT).hardness(0.3F));
 
     @Override
     public void onInitialize() {
         log(Level.INFO, "Initializing");
+
         CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {
             dispatcher.register(literal("foo").executes(context -> {
                 System.out.println("foo");
                 return 1;
             }));
         });
-        Registry.register(Registry.ITEM, new Identifier("gentest", "sajt2"), SAJT);
+        Registry.register(Registry.BLOCK, new Identifier("gentest", "sajt"), SAJT);
+        Registry.register(Registry.ITEM, new Identifier("gentest", "sajt"), new BlockItem(SAJT, new Item.Settings().group(ItemGroup.MISC)));
     }
 
     public static void log(Level level, String message) {

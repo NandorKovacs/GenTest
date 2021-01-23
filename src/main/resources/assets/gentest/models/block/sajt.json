@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "gentest:block/sajt_top",
+    "side": "gentest:block/sajt"
+  }
+}
