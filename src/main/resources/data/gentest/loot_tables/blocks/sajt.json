@@ -5,7 +5,7 @@
       "rolls": 1,
       "entries": [
         {
-          "type": "gentest:item",
+          "type": "minecraft:item",
           "name": "gentest:sajt"
         }
       ],

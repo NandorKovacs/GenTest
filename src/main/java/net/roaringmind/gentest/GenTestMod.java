@@ -3,6 +3,7 @@ package net.roaringmind.gentest;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
@@ -23,7 +24,7 @@ public class GenTestMod implements ModInitializer {
     public static final String MOD_ID = "gentest";
     public static final String MOD_NAME = "GenTest Mod";
 
-    public static final Block SAJT = new Block(FabricBlockSettings.of(Material.ORGANIC_PRODUCT).hardness(0.3F));
+    public static final Block SAJT = new Block(FabricBlockSettings.of(Material.ORGANIC_PRODUCT).hardness(0.1F).breakByTool(FabricToolTags.AXES, 0));
 
     @Override
     public void onInitialize() {
